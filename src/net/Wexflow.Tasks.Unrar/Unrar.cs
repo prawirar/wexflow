@@ -118,7 +118,7 @@ namespace Wexflow.Tasks.Unrar
 
         private void ExtractRar(string rarFileName, string targetDir)
         {
-            using (var archive = RarArchive.Open(rarFileName))
+            using (var archive = RarArchive.OpenArchive(rarFileName))
             {
                 foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
                 {

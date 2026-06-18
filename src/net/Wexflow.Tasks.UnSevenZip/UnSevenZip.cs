@@ -118,7 +118,7 @@ namespace Wexflow.Tasks.UnSevenZip
 
         private void Extract7Z(string rarFileName, string targetDir)
         {
-            using (var archive = SevenZipArchive.Open(rarFileName))
+            using (var archive = SevenZipArchive.OpenArchive(rarFileName))
             {
                 foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
                 {
